@@ -1,18 +1,34 @@
 includes:
-  - 'layer:basic'
-  - 'layer:status'
-  - 'layer:metrics'
-  - 'layer:nagios'
-  - 'layer:snap'
-  - 'layer:leadership'
-  - 'interface:redis'
+  - layer:basic
+  - layer:status
+  - layer:metrics
+  - layer:nagios
+  - layer:snap
+  - layer:leadership
+  - interface:redis
+ignore:
+  - .gitignore
+  - .git
+  - .idea
+  - .venv
+  - .mypy_cache
+  - lib/charms/layer/.mypy_cache
+  - reactive/.mypy_cache
+exclude:
+  - .mypy_cache
+  - .venv
+  - lib/charms/layer/.mypy_cache
+  - reactive/.mypy_cache
 options:
+  basic:
+    include_system_packages: true
+    use_venv: true
   snap:
-    redis-bdx:
+    redis:
       channel: stable
       devmode: false
       jailmode: false
-      dangerous: true
+      dangerous: false
       classic: false
       revision: null
 repo: "https://github.com:timesofmalta/layer-redis"

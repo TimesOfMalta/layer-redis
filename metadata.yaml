@@ -1,6 +1,7 @@
 name: redis
 summary: Persistent key-value database with network interface
 maintainer: David Tourrel <david.tourrel@timesofmalta.com>
+display-name: redis
 description: |
   Redis is a key-value database in a similar vein to memcache but the
   dataset is non-volatile. Redis additionally provides native support
@@ -21,9 +22,9 @@ provides:
     interface: redis
 peers:
   cluster:
-    interface: "redis"
+    interface: redis
 resources:
-  redis-bdx:
+  redis:
     type: file
-    filename: redis-bdx.snap
-    description: Redis bdx snap
+    filename: redis.snap
+    description: Redis snap

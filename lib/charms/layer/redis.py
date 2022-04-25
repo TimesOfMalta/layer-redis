@@ -3,9 +3,9 @@ from subprocess import check_output
 from charmhelpers.core.templating import render
 
 
-REDIS_SERVICE = 'snap.redis-bdx.redis-server'
+REDIS_SERVICE = 'snap.redis.server'
 
-REDIS_SNAP_COMMON = os.path.join('/', 'var', 'snap', 'redis-bdx', 'common')
+REDIS_SNAP_COMMON = os.path.join('/', 'var', 'snap', 'redis', 'common')
 
 REDIS_CONF = os.path.join(REDIS_SNAP_COMMON, 'etc', 'redis', 'redis.conf')
 
@@ -14,9 +14,9 @@ REDIS_DIR = os.path.join(REDIS_SNAP_COMMON, 'var', 'lib', 'redis')
 REDIS_CLUSTER_CONF = os.path.join(REDIS_DIR, 'nodes.conf')
 
 REDIS_BIN = \
-    os.path.join('/', 'snap', 'redis-bdx', 'current', 'bin', 'redis-server')
+    os.path.join('/', 'snap', 'redis', 'current', 'usr', 'bin', 'redis-server')
 
-REDIS_CLI = os.path.join('/', 'snap', 'bin', 'redis-bdx.redis-cli')
+REDIS_CLI = os.path.join('/', 'snap', 'bin', 'redis-cli')
 
 
 def render_conf(cfg_path, cfg_tmpl, owner='root',

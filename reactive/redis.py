@@ -119,7 +119,7 @@ def configure_system_for_redis():
     set_flag('redis.system.configured')
 
 
-@when('snap.installed.redis-bdx',
+@when('snap.installed.redis',
       'redis.system.configured',
       'redis.cluster.standalone.determined')
 @when_not('redis.system.pre-init.complete')
